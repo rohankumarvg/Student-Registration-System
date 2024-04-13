@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Registration System</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Student Registration System</h1>
+      <p>Register, edit, and manage student records.</p>
+    </header>
+
+    <main>
+      <section id="registration-form">
+        <h2>Register New Student</h2>
+        <form id="student-form">
+          <div class="input-group">
+            <label for="name">Name:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Enter student name"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="id">Student ID:</label>
+            <input
+              type="text"
+              id="id"
+              name="id"
+              placeholder="Enter student ID"
+              required
+              pattern="[0-9]+"
+            />
+            <span class="error-message" id="id-error"></span>
+          </div>
+          <div class="input-group">
+            <label for="email">Email ID:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter email ID"
+              required
+            />
+          </div>
+          <div class="input-group">
+            <label for="contact">Contact No.:</label>
+            <input
+              type="text"
+              id="contact"
+              name="contact"
+              placeholder="Enter contact number"
+              required
+              pattern="[0-9]+"
+            />
+            <span class="error-message" id="contact-error"></span>
+          </div>
+          <div class="input-group">
+            <label for="address">Address:</label>
+            <textarea
+              id="address"
+              name="address"
+              placeholder="Enter student address"
+            ></textarea>
+          </div>
+          <div class="button-group">
+            <button type="submit" class="btn">
+              <i class="material-icons">person_add</i> Register
+            </button>
+          </div>
+        </form>
+      </section>
+
+      <section id="student-records">
+        <h2>Registered Students</h2>
+        <div class="search-bar">
+          <i class="material-icons">search</i>
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Search by name or ID"
+          />
+        </div>
+        <table id="student-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Student ID</th>
+              <th>Email</th>
+              <th>Contact No.</th>
+              <th>Address</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody id="student-table-body"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
